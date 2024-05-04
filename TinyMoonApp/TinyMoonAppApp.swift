@@ -8,7 +8,7 @@ struct TinyMoonAppApp: App {
   @State var moon = TinyMoon().calculateMoonPhase()
   var body: some Scene {
     MenuBarExtra(moon.emoji) {
-      ContentView()
+      DetailView()
     }
     .menuBarExtraStyle(.window)
   }

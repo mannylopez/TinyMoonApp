@@ -3,7 +3,7 @@
 import SwiftUI
 import TinyMoon
 
-struct ContentView: View {
+struct DetailView: View {
   init(date: Date = Date()) {
     moon = TinyMoon().calculateMoonPhase(date)
   }
@@ -13,29 +13,37 @@ struct ContentView: View {
   @State private var isDatePickerVisible = false
 
   var body: some View {
+    HStack {
+      Spacer()
+      settingsButton
+    }
     VStack {
       title
-        .padding(.top, 8)
       Divider()
-
       if isDatePickerVisible {
         datePicker
       }
-
       if !isDatePickerVisible {
         moonDetails
-
-        Divider()
-        
-        Button {
-          NSApplication.shared.terminate(nil)
-        } label: {
-          Image(systemName: "gearshape")
-        }
-        .padding(.bottom, 8)
       }
     }
-//    .padding()
+  }
+
+  private var settingsButton: some View {
+    Button {
+      NSApplication.shared.terminate(nil)
+    } label: {
+      Image(systemName: "gearshape")
+    }
+    .buttonStyle(PlainButtonStyle())
+    .padding(.top, 8)
+    .padding(.trailing, 8)
+    .onAppear {
+      // Set focus to nil to remove focus from the settings button
+      DispatchQueue.main.async {
+        NSApplication.shared.keyWindow?.makeFirstResponder(nil)
+      }
+    }
   }
 
   private var title: some View {
@@ -51,6 +59,7 @@ struct ContentView: View {
       }
     }
     .font(.title2)
+    .padding(.top, -20)
   }
 
   private var datePicker: some View {
@@ -72,10 +81,11 @@ struct ContentView: View {
   private var moonDetails: some View {
     VStack(alignment: .leading, content: {
       Text("\(moon.emoji) \(moon.name)")
-        .padding(2)
+        .padding(.top, 4)
 
       Text(moon.daysTillFullMoon == 0 ? moon.fullMoonName! : "\(moon.daysTillFullMoon) days till next full moon")
-        .padding(2)
+        .padding(.top, 2)
+        .padding(.bottom, 12)
     })
     .font(.title3)
   }
@@ -89,5 +99,5 @@ struct ContentView: View {
 }
 
 #Preview {
-  return ContentView()
+  return DetailView()
 }
