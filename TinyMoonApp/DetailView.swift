@@ -4,9 +4,12 @@ import SwiftUI
 import TinyMoon
 
 struct DetailView: View {
+
   init(date: Date = Date()) {
     moon = TinyMoon().calculateMoonPhase(date)
   }
+
+  @Environment(\.openWindow) private var openWindow
 
   @State private var moon: Moon
   @State private var selectedDate = Date()
@@ -31,7 +34,7 @@ struct DetailView: View {
 
   private var settingsButton: some View {
     Button {
-      NSApplication.shared.terminate(nil)
+      openWindow(id: "settings-view")
     } label: {
       Image(systemName: "gearshape")
     }

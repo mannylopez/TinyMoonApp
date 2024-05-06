@@ -11,5 +11,11 @@ struct TinyMoonAppApp: App {
       DetailView()
     }
     .menuBarExtraStyle(.window)
+
+    WindowGroup(id: "settings-view") {
+      SettingsView()
+        .frame(minWidth: 300, minHeight: 150)
+    }
+    .windowResizability(.contentSize)
   }
 }
