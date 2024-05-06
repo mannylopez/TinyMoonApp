@@ -8,17 +8,21 @@ struct SettingsView: View {
 
   var body: some View {
     VStack {
+      HStack {
+        appVersion
+        Spacer()
+        about
+      }
       title
       Divider()
-      launchAtLoginToggleButton
-      showDockIconToggleButton
+      toggleButton(label: "Launch Tiny Moon at login", isOn: $isLaunchAtLogin)
+        .padding(.top, 4)
+      toggleButton(label: "Show Dock icon", isOn: $isShowDockIcon)
       quitAppButton
-      appVersion
-      about
+        .padding(.top, 4)
       Spacer()
     }
     .padding()
-    .frame(width: 350, height: 175) // Set your desired size
     .background(Color.white)
     .cornerRadius(10)
     .shadow(radius: 5)
@@ -29,26 +33,6 @@ struct SettingsView: View {
       .font(.title2)
   }
 
-  private var launchAtLoginToggleButton: some View {
-    HStack {
-      Toggle(isOn: $isLaunchAtLogin, label: {})
-      .toggleStyle(.switch)
-      Text("Launch Tiny Moon at login")
-      Spacer()
-    }
-    .frame(maxWidth: 250)
-  }
-
-  private var showDockIconToggleButton: some View {
-    HStack {
-      Toggle(isOn: $isShowDockIcon, label: {})
-      .toggleStyle(.switch)
-      Text("Show Dock icon")
-      Spacer()
-    }
-    .frame(maxWidth: 250)
-  }
-
   private var quitAppButton: some View {
     Button("Quit app") {
       NSApplication.shared.terminate(nil)
@@ -56,14 +40,25 @@ struct SettingsView: View {
   }
 
   private var appVersion: some View {
-    Text("version 1.0")
+    Text("Version 1.0")
   }
 
   private var about: some View {
-    Text("about")
+    Text("Info")
       .foregroundStyle(.blue)
   }
+
+  private func toggleButton(label: String, isOn: Binding<Bool>) -> some View {
+    HStack {
+      Toggle(isOn: isOn, label: {})
+      .toggleStyle(.switch)
+      Text(label)
+      Spacer()
+    }
+    .frame(maxWidth: 250)
+  }
 }
+
 
 #Preview {
   SettingsView()
