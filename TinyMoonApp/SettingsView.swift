@@ -17,7 +17,6 @@ struct SettingsView: View {
       Divider()
       toggleButton(label: "Launch Tiny Moon at login", isOn: $isLaunchAtLogin)
         .padding(.top, 4)
-      toggleButton(label: "Show Dock icon", isOn: $isShowDockIcon)
       quitAppButton
         .padding(.top, 4)
       Spacer()
