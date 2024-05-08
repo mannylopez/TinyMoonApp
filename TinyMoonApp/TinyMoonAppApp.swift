@@ -12,7 +12,7 @@ struct TinyMoonAppApp: App {
     }
     .menuBarExtraStyle(.window)
 
-    WindowGroup(id: "settings-view") {
+    Window("TinyMoon Settings", id: "settings-view") {
       SettingsView()
         .frame(maxWidth: 350, maxHeight: 150)
     }
