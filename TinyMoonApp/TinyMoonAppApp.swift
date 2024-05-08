@@ -14,7 +14,7 @@ struct TinyMoonAppApp: App {
 
     WindowGroup(id: "settings-view") {
       SettingsView()
-        .frame(maxWidth: 350, maxHeight: 200)
+        .frame(maxWidth: 350, maxHeight: 150)
     }
     .windowResizability(.contentSize)
   }
