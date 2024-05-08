@@ -1,6 +1,7 @@
 // Created by manny_lopez on 5/4/24.
 
 import SwiftUI
+import LaunchAtLogin
 
 struct SettingsView: View {
   @State private var isLaunchAtLogin = false
@@ -15,8 +16,7 @@ struct SettingsView: View {
       }
       title
       Divider()
-      toggleButton(label: "Launch Tiny Moon at login", isOn: $isLaunchAtLogin)
-        .padding(.top, 4)
+      launchAtLoginToggleButton
       quitAppButton
         .padding(.top, 4)
       Spacer()
@@ -47,14 +47,10 @@ struct SettingsView: View {
       .foregroundStyle(.blue)
   }
 
-  private func toggleButton(label: String, isOn: Binding<Bool>) -> some View {
-    HStack {
-      Toggle(isOn: isOn, label: {})
+  private var launchAtLoginToggleButton: some View {
+    LaunchAtLogin.Toggle()
       .toggleStyle(.switch)
-      Text(label)
-      Spacer()
-    }
-    .frame(maxWidth: 250)
+      .padding(.top, 4)
   }
 }
 

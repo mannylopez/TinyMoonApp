@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58213FFB2BEB078D0018233B /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 58213FFA2BEB078D0018233B /* LaunchAtLogin */; };
 		584A0A1D2BE6F83000DD9188 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584A0A1C2BE6F83000DD9188 /* SettingsView.swift */; };
 		584DB2D72BE1BD5E0017C8A3 /* TinyMoonAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DB2D62BE1BD5E0017C8A3 /* TinyMoonAppApp.swift */; };
 		584DB2D92BE1BD5E0017C8A3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DB2D82BE1BD5E0017C8A3 /* DetailView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58213FFC2BEB07EC0018233B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		584A0A1C2BE6F83000DD9188 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		584DB2D32BE1BD5E0017C8A3 /* TinyMoonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyMoonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		584DB2D62BE1BD5E0017C8A3 /* TinyMoonAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyMoonAppApp.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58213FFB2BEB078D0018233B /* LaunchAtLogin in Frameworks */,
 				584DB3032BE1BDB90017C8A3 /* TinyMoon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +102,7 @@
 		584DB2D52BE1BD5E0017C8A3 /* TinyMoonApp */ = {
 			isa = PBXGroup;
 			children = (
+				58213FFC2BEB07EC0018233B /* Info.plist */,
 				584DB2D62BE1BD5E0017C8A3 /* TinyMoonAppApp.swift */,
 				584DB2D82BE1BD5E0017C8A3 /* DetailView.swift */,
 				584A0A1C2BE6F83000DD9188 /* SettingsView.swift */,
@@ -152,6 +156,7 @@
 			name = TinyMoonApp;
 			packageProductDependencies = (
 				584DB3022BE1BDB90017C8A3 /* TinyMoon */,
+				58213FFA2BEB078D0018233B /* LaunchAtLogin */,
 			);
 			productName = TinyMoonApp;
 			productReference = 584DB2D32BE1BD5E0017C8A3 /* TinyMoonApp.app */;
@@ -227,6 +232,7 @@
 			mainGroup = 584DB2CA2BE1BD5E0017C8A3;
 			packageReferences = (
 				58BADAF92BE6E975003E6B5B /* XCRemoteSwiftPackageReference "TinyMoon" */,
+				580979202BEB0716008095AE /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			productRefGroup = 584DB2D42BE1BD5E0017C8A3 /* Products */;
 			projectDirPath = "";
@@ -441,6 +447,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TinyMoonApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Tiny Moon";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -469,6 +478,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TinyMoonApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Tiny Moon";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -597,6 +609,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		580979202BEB0716008095AE /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		58BADAF92BE6E975003E6B5B /* XCRemoteSwiftPackageReference "TinyMoon" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mannylopez/TinyMoon";
@@ -608,6 +628,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		58213FFA2BEB078D0018233B /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 580979202BEB0716008095AE /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
+		};
 		584DB3022BE1BDB90017C8A3 /* TinyMoon */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TinyMoon;
