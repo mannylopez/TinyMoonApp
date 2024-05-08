@@ -1,5 +1,4 @@
 // Created by manny_lopez on 4/30/24.
-// Copyright © 2024 Airbnb Inc. All rights reserved.
 
 import XCTest
 @testable import TinyMoonApp
