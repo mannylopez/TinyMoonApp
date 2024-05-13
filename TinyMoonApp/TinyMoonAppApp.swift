@@ -5,9 +5,15 @@ import TinyMoon
 
 @main
 struct TinyMoonAppApp: App {
-  @State var moon = TinyMoon().calculateMoonPhase()
+
+  init() {
+    viewModel = MoonViewModel()
+  }
+
+  @ObservedObject var viewModel: MoonViewModel
+
   var body: some Scene {
-    MenuBarExtra(moon.emoji) {
+    MenuBarExtra(viewModel.moon.emoji) {
       DetailView()
     }
     .menuBarExtraStyle(.window)

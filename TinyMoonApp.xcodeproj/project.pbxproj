@@ -17,6 +17,7 @@
 		584DB2F32BE1BD5F0017C8A3 /* TinyMoonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DB2F22BE1BD5F0017C8A3 /* TinyMoonAppUITests.swift */; };
 		584DB2F52BE1BD5F0017C8A3 /* TinyMoonAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DB2F42BE1BD5F0017C8A3 /* TinyMoonAppUITestsLaunchTests.swift */; };
 		584DB3032BE1BDB90017C8A3 /* TinyMoon in Frameworks */ = {isa = PBXBuildFile; productRef = 584DB3022BE1BDB90017C8A3 /* TinyMoon */; };
+		58FED8232BF29E660085D24A /* MoonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FED8222BF29E660085D24A /* MoonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		584DB2EE2BE1BD5F0017C8A3 /* TinyMoonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyMoonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		584DB2F22BE1BD5F0017C8A3 /* TinyMoonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyMoonAppUITests.swift; sourceTree = "<group>"; };
 		584DB2F42BE1BD5F0017C8A3 /* TinyMoonAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyMoonAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		58FED8222BF29E660085D24A /* MoonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				58213FFC2BEB07EC0018233B /* Info.plist */,
 				584DB2D62BE1BD5E0017C8A3 /* TinyMoonAppApp.swift */,
+				58FED8222BF29E660085D24A /* MoonViewModel.swift */,
 				584DB2D82BE1BD5E0017C8A3 /* DetailView.swift */,
 				584A0A1C2BE6F83000DD9188 /* SettingsView.swift */,
 				584DB2DA2BE1BD5F0017C8A3 /* Assets.xcassets */,
@@ -279,6 +282,7 @@
 				584A0A1D2BE6F83000DD9188 /* SettingsView.swift in Sources */,
 				584DB2D92BE1BD5E0017C8A3 /* DetailView.swift in Sources */,
 				584DB2D72BE1BD5E0017C8A3 /* TinyMoonAppApp.swift in Sources */,
+				58FED8232BF29E660085D24A /* MoonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
