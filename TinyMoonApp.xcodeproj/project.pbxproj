@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		58213FFB2BEB078D0018233B /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 58213FFA2BEB078D0018233B /* LaunchAtLogin */; };
 		584A0A1D2BE6F83000DD9188 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584A0A1C2BE6F83000DD9188 /* SettingsView.swift */; };
-		584DB2D72BE1BD5E0017C8A3 /* TinyMoonAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DB2D62BE1BD5E0017C8A3 /* TinyMoonAppApp.swift */; };
+		584DB2D72BE1BD5E0017C8A3 /* TinyMoonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DB2D62BE1BD5E0017C8A3 /* TinyMoonApp.swift */; };
 		584DB2D92BE1BD5E0017C8A3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DB2D82BE1BD5E0017C8A3 /* DetailView.swift */; };
 		584DB2DB2BE1BD5F0017C8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584DB2DA2BE1BD5F0017C8A3 /* Assets.xcassets */; };
 		584DB2DE2BE1BD5F0017C8A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584DB2DD2BE1BD5F0017C8A3 /* Preview Assets.xcassets */; };
@@ -41,7 +41,7 @@
 		58213FFC2BEB07EC0018233B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		584A0A1C2BE6F83000DD9188 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		584DB2D32BE1BD5E0017C8A3 /* TinyMoonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyMoonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		584DB2D62BE1BD5E0017C8A3 /* TinyMoonAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyMoonAppApp.swift; sourceTree = "<group>"; };
+		584DB2D62BE1BD5E0017C8A3 /* TinyMoonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyMoonApp.swift; sourceTree = "<group>"; };
 		584DB2D82BE1BD5E0017C8A3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		584DB2DA2BE1BD5F0017C8A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		584DB2DD2BE1BD5F0017C8A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				58213FFC2BEB07EC0018233B /* Info.plist */,
-				584DB2D62BE1BD5E0017C8A3 /* TinyMoonAppApp.swift */,
+				584DB2D62BE1BD5E0017C8A3 /* TinyMoonApp.swift */,
 				58FED8222BF29E660085D24A /* MoonViewModel.swift */,
 				584DB2D82BE1BD5E0017C8A3 /* DetailView.swift */,
 				584A0A1C2BE6F83000DD9188 /* SettingsView.swift */,
@@ -281,7 +281,7 @@
 			files = (
 				584A0A1D2BE6F83000DD9188 /* SettingsView.swift in Sources */,
 				584DB2D92BE1BD5E0017C8A3 /* DetailView.swift in Sources */,
-				584DB2D72BE1BD5E0017C8A3 /* TinyMoonAppApp.swift in Sources */,
+				584DB2D72BE1BD5E0017C8A3 /* TinyMoonApp.swift in Sources */,
 				58FED8232BF29E660085D24A /* MoonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

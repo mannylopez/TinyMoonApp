@@ -4,7 +4,7 @@ import SwiftUI
 import TinyMoon
 
 @main
-struct TinyMoonAppApp: App {
+struct TinyMoonApp: App {
 
   init() {
     viewModel = MoonViewModel()
