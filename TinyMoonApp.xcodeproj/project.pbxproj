@@ -87,6 +87,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		581376B02BF42F6200088B41 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				58CCB62F2BF40F0100A16D3B /* EntryMetadata.swift */,
+				58CCB62D2BF3DB1000A16D3B /* Logger.swift */,
+				58CCB6312BF4218200A16D3B /* TextDocument.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		581376B12BF42FA500088B41 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				584DB2D82BE1BD5E0017C8A3 /* DetailView.swift */,
+				584A0A1C2BE6F83000DD9188 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		581376B22BF42FC300088B41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				58FED8222BF29E660085D24A /* MoonViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		584DB2CA2BE1BD5E0017C8A3 = {
 			isa = PBXGroup;
 			children = (
@@ -112,12 +139,9 @@
 			children = (
 				58213FFC2BEB07EC0018233B /* Info.plist */,
 				584DB2D62BE1BD5E0017C8A3 /* TinyMoonApp.swift */,
-				58CCB62F2BF40F0100A16D3B /* EntryMetadata.swift */,
-				58CCB6312BF4218200A16D3B /* TextDocument.swift */,
-				58CCB62D2BF3DB1000A16D3B /* Logger.swift */,
-				58FED8222BF29E660085D24A /* MoonViewModel.swift */,
-				584DB2D82BE1BD5E0017C8A3 /* DetailView.swift */,
-				584A0A1C2BE6F83000DD9188 /* SettingsView.swift */,
+				581376B22BF42FC300088B41 /* Model */,
+				581376B12BF42FA500088B41 /* View */,
+				581376B02BF42F6200088B41 /* Logging */,
 				584DB2DA2BE1BD5F0017C8A3 /* Assets.xcassets */,
 				584DB2DF2BE1BD5F0017C8A3 /* TinyMoonApp.entitlements */,
 				584DB2DC2BE1BD5F0017C8A3 /* Preview Content */,
