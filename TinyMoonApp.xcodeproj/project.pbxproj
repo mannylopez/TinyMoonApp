@@ -17,6 +17,7 @@
 		584DB2F32BE1BD5F0017C8A3 /* TinyMoonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DB2F22BE1BD5F0017C8A3 /* TinyMoonAppUITests.swift */; };
 		584DB2F52BE1BD5F0017C8A3 /* TinyMoonAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DB2F42BE1BD5F0017C8A3 /* TinyMoonAppUITestsLaunchTests.swift */; };
 		584DB3032BE1BDB90017C8A3 /* TinyMoon in Frameworks */ = {isa = PBXBuildFile; productRef = 584DB3022BE1BDB90017C8A3 /* TinyMoon */; };
+		58CCB62E2BF3DB1000A16D3B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CCB62D2BF3DB1000A16D3B /* Logger.swift */; };
 		58FED8232BF29E660085D24A /* MoonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FED8222BF29E660085D24A /* MoonViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		584DB2EE2BE1BD5F0017C8A3 /* TinyMoonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyMoonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		584DB2F22BE1BD5F0017C8A3 /* TinyMoonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyMoonAppUITests.swift; sourceTree = "<group>"; };
 		584DB2F42BE1BD5F0017C8A3 /* TinyMoonAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyMoonAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		58CCB62D2BF3DB1000A16D3B /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		58FED8222BF29E660085D24A /* MoonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 		584DB2CA2BE1BD5E0017C8A3 = {
 			isa = PBXGroup;
 			children = (
+				58CCB62D2BF3DB1000A16D3B /* Logger.swift */,
 				584DB2D52BE1BD5E0017C8A3 /* TinyMoonApp */,
 				584DB2E72BE1BD5F0017C8A3 /* TinyMoonAppTests */,
 				584DB2F12BE1BD5F0017C8A3 /* TinyMoonAppUITests */,
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58CCB62E2BF3DB1000A16D3B /* Logger.swift in Sources */,
 				584A0A1D2BE6F83000DD9188 /* SettingsView.swift in Sources */,
 				584DB2D92BE1BD5E0017C8A3 /* DetailView.swift in Sources */,
 				584DB2D72BE1BD5E0017C8A3 /* TinyMoonApp.swift in Sources */,
