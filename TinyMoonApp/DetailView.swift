@@ -35,6 +35,7 @@ struct DetailView: View {
   private var settingsButton: some View {
     Button {
       openWindow(id: "settings-view")
+      NSApplication.shared.activate(ignoringOtherApps: true) // Activate the app and bring the window to the forefront
     } label: {
       Image(systemName: "gearshape")
     }
