@@ -50,7 +50,7 @@ struct SettingsView: View {
   }
 
   private var appVersion: some View {
-    Text("Version 1.0")
+    Text(MoonViewModel.appVersion)
   }
 
   private var about: some View {

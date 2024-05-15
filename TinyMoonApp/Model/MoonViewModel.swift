@@ -6,6 +6,8 @@ import SwiftUI
 import TinyMoon
 
 class MoonViewModel: ObservableObject {
+  public static let appVersion = "v. 1.0"
+
   @Published var moon: Moon
 
   init(date: Date = Date()) {
