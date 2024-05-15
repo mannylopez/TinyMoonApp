@@ -75,6 +75,8 @@ struct SettingsView: View {
 
   private var exportLogsButton: some View {
     Button("Export") {
+      Logger.log(event: "Export logs button tapped")
+      Logger.export()
       exportLogs = true
     }
     .fileExporter(
