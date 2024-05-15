@@ -18,13 +18,13 @@ struct DetailView: View {
 
   var body: some View {
     HStack {
-      Spacer()
+      title
       settingsButton
     }
     .modifier(OnAppearLogEventViewModifier(event: "DetailView visible: MoonObject: \(moon), daysTillFullMoon: \(daysTillFullMoon(moon.daysTillFullMoon))"))
+    .padding(.top, 10)
 
     VStack {
-      title
       Divider()
       if isDatePickerVisible {
         datePicker
@@ -42,10 +42,9 @@ struct DetailView: View {
       NSApplication.shared.activate(ignoringOtherApps: true) // Activate the app and bring the window to the forefront
     } label: {
       Image(systemName: "gearshape")
+        .font(.title3)
     }
     .buttonStyle(PlainButtonStyle())
-    .padding(.top, 8)
-    .padding(.trailing, 8)
     .onAppear {
       // Set focus to nil to remove focus from the settings button
       DispatchQueue.main.async {
@@ -62,12 +61,18 @@ struct DetailView: View {
           isDatePickerVisible.toggle()
         }, label: {
           Text(formattedDate)
+            .onAppear {
+              // Set focus to nil to remove focus from the settings button
+              DispatchQueue.main.async {
+                NSApplication.shared.keyWindow?.makeFirstResponder(nil)
+              }
+            }
         })
-        .offset(x: -3)
+        .offset(x: -2)
       }
     }
     .font(.title2)
-    .padding(.top, -20)
+    .padding(.leading, 30)
   }
 
   private var datePicker: some View {
