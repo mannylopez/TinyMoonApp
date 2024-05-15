@@ -21,6 +21,7 @@
 		58CCB62E2BF3DB1000A16D3B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CCB62D2BF3DB1000A16D3B /* Logger.swift */; };
 		58CCB6302BF40F0100A16D3B /* EntryMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CCB62F2BF40F0100A16D3B /* EntryMetadata.swift */; };
 		58CCB6322BF4218200A16D3B /* TextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CCB6312BF4218200A16D3B /* TextDocument.swift */; };
+		58F305D82BF52AE40037F600 /* RoundedRectangleBorderViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F305D72BF52AE40037F600 /* RoundedRectangleBorderViewModifier.swift */; };
 		58FED8232BF29E660085D24A /* MoonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FED8222BF29E660085D24A /* MoonViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		58CCB62D2BF3DB1000A16D3B /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		58CCB62F2BF40F0100A16D3B /* EntryMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryMetadata.swift; sourceTree = "<group>"; };
 		58CCB6312BF4218200A16D3B /* TextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDocument.swift; sourceTree = "<group>"; };
+		58F305D72BF52AE40037F600 /* RoundedRectangleBorderViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleBorderViewModifier.swift; sourceTree = "<group>"; };
 		58FED8222BF29E660085D24A /* MoonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,13 +101,13 @@
 			path = Logging;
 			sourceTree = "<group>";
 		};
-		581376B12BF42FA500088B41 /* View */ = {
+		581376B12BF42FA500088B41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				584DB2D82BE1BD5E0017C8A3 /* DetailView.swift */,
 				584A0A1C2BE6F83000DD9188 /* SettingsView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		581376B22BF42FC300088B41 /* Model */ = {
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				581376B42BF437C700088B41 /* OnAppearLogEventViewModifier.swift */,
+				58F305D72BF52AE40037F600 /* RoundedRectangleBorderViewModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -151,7 +154,7 @@
 				584DB2D62BE1BD5E0017C8A3 /* TinyMoonApp.swift */,
 				581376B32BF437AD00088B41 /* ViewModifiers */,
 				581376B22BF42FC300088B41 /* Model */,
-				581376B12BF42FA500088B41 /* View */,
+				581376B12BF42FA500088B41 /* Views */,
 				581376B02BF42F6200088B41 /* Logging */,
 				584DB2DA2BE1BD5F0017C8A3 /* Assets.xcassets */,
 				584DB2DF2BE1BD5F0017C8A3 /* TinyMoonApp.entitlements */,
@@ -331,6 +334,7 @@
 				58CCB6302BF40F0100A16D3B /* EntryMetadata.swift in Sources */,
 				584DB2D72BE1BD5E0017C8A3 /* TinyMoonApp.swift in Sources */,
 				58FED8232BF29E660085D24A /* MoonViewModel.swift in Sources */,
+				58F305D82BF52AE40037F600 /* RoundedRectangleBorderViewModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

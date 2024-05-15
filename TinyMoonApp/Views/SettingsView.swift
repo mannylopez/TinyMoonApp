@@ -24,7 +24,7 @@ struct SettingsView: View {
         launchAtLoginToggleButton
         showDebugLogsButton
         quitAppButton
-      } 
+      }
       else {
         debugLogsView
       }
@@ -104,12 +104,13 @@ struct SettingsView: View {
     }
     ScrollView {
       Text(Logger.logEntries.debugDescription)
+        .padding()
         .lineLimit(nil)
     }
+    .modifier(RoundedRectangleBorder())
     .frame(maxHeight: .infinity)
   }
 }
-
 
 #Preview {
   SettingsView()
