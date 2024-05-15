@@ -43,6 +43,8 @@ struct DetailView: View {
     } label: {
       Image(systemName: "gearshape")
         .font(.title3)
+        .padding(3)
+        .contentShape(Rectangle())
     }
     .buttonStyle(PlainButtonStyle())
     .onAppear {
