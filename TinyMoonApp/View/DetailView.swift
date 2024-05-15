@@ -1,5 +1,6 @@
 // Created by manny_lopez on 4/30/24.
 
+import os
 import SwiftUI
 import TinyMoon
 
@@ -20,6 +21,8 @@ struct DetailView: View {
       Spacer()
       settingsButton
     }
+    .modifier(OnAppearLogEventViewModifier(event: "DetailView visible: MoonObject: \(moon), daysTillFullMoon: \(daysTillFullMoon(moon.daysTillFullMoon))"))
+
     VStack {
       title
       Divider()
@@ -34,6 +37,7 @@ struct DetailView: View {
 
   private var settingsButton: some View {
     Button {
+      Logger.log(event: "Settings button tapped")
       openWindow(id: "settings-view")
       NSApplication.shared.activate(ignoringOtherApps: true) // Activate the app and bring the window to the forefront
     } label: {
@@ -78,8 +82,10 @@ struct DetailView: View {
     .onChange(of: selectedDate) { _, newValue in
       selectedDate = newValue
       moon = TinyMoon().calculateMoonPhase(newValue)
+      Logger.log(event: "DatePicker: New date chosen. MoonObject: \(moon)")
       isDatePickerVisible = false
     }
+    .modifier(OnAppearLogEventViewModifier(event: "DatePicker visible"))
   }
 
   private var moonDetails: some View {
@@ -87,7 +93,7 @@ struct DetailView: View {
       Text("\(moon.emoji) \(moon.name)")
         .padding(.top, 4)
 
-      Text(moon.daysTillFullMoon == 0 ? moon.fullMoonName! : "\(moon.daysTillFullMoon) days till next full moon")
+      Text(daysTillFullMoon(moon.daysTillFullMoon))
         .padding(.top, 2)
         .padding(.bottom, 12)
     })
@@ -99,6 +105,10 @@ struct DetailView: View {
     formatter.dateFormat = "MM/dd/yyyy"
     let formattedDate = formatter.string(from: selectedDate)
     return formattedDate
+  }
+
+  private func daysTillFullMoon(_ daysTillFullMoon: Int) -> String {
+    daysTillFullMoon == 0 ? moon.fullMoonName! : "\(moon.daysTillFullMoon) days till next full moon"
   }
 }
 

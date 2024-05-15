@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		581376B52BF437C700088B41 /* OnAppearLogEventViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581376B42BF437C700088B41 /* OnAppearLogEventViewModifier.swift */; };
 		58213FFB2BEB078D0018233B /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 58213FFA2BEB078D0018233B /* LaunchAtLogin */; };
 		584A0A1D2BE6F83000DD9188 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584A0A1C2BE6F83000DD9188 /* SettingsView.swift */; };
 		584DB2D72BE1BD5E0017C8A3 /* TinyMoonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DB2D62BE1BD5E0017C8A3 /* TinyMoonApp.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		581376B42BF437C700088B41 /* OnAppearLogEventViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnAppearLogEventViewModifier.swift; sourceTree = "<group>"; };
 		58213FFC2BEB07EC0018233B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		584A0A1C2BE6F83000DD9188 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		584DB2D32BE1BD5E0017C8A3 /* TinyMoonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyMoonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		581376B32BF437AD00088B41 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				581376B42BF437C700088B41 /* OnAppearLogEventViewModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		584DB2CA2BE1BD5E0017C8A3 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 			children = (
 				58213FFC2BEB07EC0018233B /* Info.plist */,
 				584DB2D62BE1BD5E0017C8A3 /* TinyMoonApp.swift */,
+				581376B32BF437AD00088B41 /* ViewModifiers */,
 				581376B22BF42FC300088B41 /* Model */,
 				581376B12BF42FA500088B41 /* View */,
 				581376B02BF42F6200088B41 /* Logging */,
@@ -315,6 +326,7 @@
 				58CCB6322BF4218200A16D3B /* TextDocument.swift in Sources */,
 				58CCB62E2BF3DB1000A16D3B /* Logger.swift in Sources */,
 				584A0A1D2BE6F83000DD9188 /* SettingsView.swift in Sources */,
+				581376B52BF437C700088B41 /* OnAppearLogEventViewModifier.swift in Sources */,
 				584DB2D92BE1BD5E0017C8A3 /* DetailView.swift in Sources */,
 				58CCB6302BF40F0100A16D3B /* EntryMetadata.swift in Sources */,
 				584DB2D72BE1BD5E0017C8A3 /* TinyMoonApp.swift in Sources */,

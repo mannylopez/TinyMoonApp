@@ -30,6 +30,7 @@ struct SettingsView: View {
       }
       Spacer()
     }
+    .modifier(OnAppearLogEventViewModifier(event: "SettingsView on screen"))
     .padding()
     .background(Color.white)
     .cornerRadius(10)
@@ -65,7 +66,7 @@ struct SettingsView: View {
 
   private var showDebugLogsButton: some View {
     Button("Show debug logs") {
-      Logger.log(event: "Export button tapped")
+      Logger.log(event: "Show debug logs button tapped")
       Logger.export()
       showDebugLogs = true
     }
