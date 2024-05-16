@@ -15,7 +15,7 @@ extension Logger {
   private(set) static var logEntries: [EntryMetadata] = []
 
   static func log(event: String) {
-    Logger.statistics.debug("\(event)")
+    Logger.statistics.info("\(event , privacy: .public)")
   }
 
   private static func formatLog(_ log: OSLogEntryLog) -> EntryMetadata {
