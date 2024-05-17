@@ -14,7 +14,7 @@ struct TinyMoonApp: App {
 
   var body: some Scene {
     MenuBarExtra(viewModel.moon.emoji) {
-      DetailView()
+      DetailView(viewModel: viewModel)
     }
     .menuBarExtraStyle(.window)
 
