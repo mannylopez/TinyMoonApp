@@ -70,6 +70,7 @@ struct DetailView: View {
           isDatePickerVisible.toggle()
         }, label: {
           Text(formattedDate)
+            .foregroundStyle(Color("PrimaryTextColor"))
             .onAppear {
               // Set focus to nil to remove focus from the settings button
               DispatchQueue.main.async {
@@ -122,12 +123,17 @@ struct DetailView: View {
   }
 
   private func daysTillFullMoon(_ daysTillFullMoon: Int) -> String {
-    daysTillFullMoon == 0 ? moon.fullMoonName! : "\(moon.daysTillFullMoon) days till next full moon"
+    if daysTillFullMoon == 0 {
+      moon.fullMoonName ?? ""
+    } else if daysTillFullMoon == 1 {
+      "Full moon in 1 day"
+    } else {
+      "Full moon in \(moon.daysTillFullMoon) days"
+    }
   }
 }
 
 #Preview {
   let date = Date()
   return DetailView(viewModel: MoonViewModel(date: date))
-
 }

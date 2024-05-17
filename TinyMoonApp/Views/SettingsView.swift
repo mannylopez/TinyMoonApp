@@ -32,7 +32,7 @@ struct SettingsView: View {
     }
     .modifier(OnAppearLogEventViewModifier(event: "SettingsView on screen"))
     .padding()
-    .background(Color.white)
+    .background(Color("BackgroundColor"))
     .cornerRadius(10)
     .shadow(radius: 5)
   }
