@@ -13,7 +13,7 @@ class MoonViewModel: ObservableObject {
   init(date: Date = Date()) {
     self.moon = TinyMoon().calculateMoonPhase(date)
     startBackgroundTask()
-    Logger.log(event: "MoonViewModel initialized with MoonObject: \(moon)")
+    Logger.log(event: "MoonViewModel initialized with MoonObject: \(moon), daysTillFullMoon: \(moon.daysTillFullMoon)")
   }
 
   private func startBackgroundTask() {

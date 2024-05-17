@@ -6,25 +6,27 @@ import TinyMoon
 
 struct DetailView: View {
 
-  init(date: Date = Date()) {
-    moon = TinyMoon().calculateMoonPhase(date)
+  init(viewModel: MoonViewModel) {
+    self.viewModel = viewModel
+    _moon = State(initialValue: viewModel.moon)
+    _selectedDate = State(initialValue: viewModel.moon.date)
   }
 
   @Environment(\.openWindow) private var openWindow
 
+  @ObservedObject var viewModel: MoonViewModel
   @State private var moon: Moon
-  @State private var selectedDate = Date()
+  @State private var selectedDate: Date
   @State private var isDatePickerVisible = false
 
   var body: some View {
-    HStack {
-      title
-      settingsButton
-    }
-    .modifier(OnAppearLogEventViewModifier(event: "DetailView visible: MoonObject: \(moon), daysTillFullMoon: \(daysTillFullMoon(moon.daysTillFullMoon))"))
-    .padding(.top, 10)
-
     VStack {
+      HStack {
+        title
+        settingsButton
+      }
+      .padding(.top, 10)
+
       Divider()
       if isDatePickerVisible {
         datePicker
@@ -33,6 +35,11 @@ struct DetailView: View {
         moonDetails
       }
     }
+    .onReceive(viewModel.$moon, perform: { updatedMoon in
+      self.moon = updatedMoon
+      self.selectedDate = updatedMoon.date
+    })
+    .modifier(OnAppearLogEventViewModifier(event: "DetailView visible: MoonObject: \(moon), daysTillFullMoon: \(daysTillFullMoon(moon.daysTillFullMoon))"))
   }
 
   private var settingsButton: some View {
@@ -120,5 +127,7 @@ struct DetailView: View {
 }
 
 #Preview {
-  return DetailView()
+  let date = Date()
+  return DetailView(viewModel: MoonViewModel(date: date))
+
 }
