@@ -53,9 +53,15 @@ struct SettingsView: View {
     Text(MoonViewModel.appVersion)
   }
 
+  @ViewBuilder
   private var about: some View {
-    Text("Info")
-      .foregroundStyle(.blue)
+    Link("Contact", destination: URL(string: "https://github.com/mannylopez/TinyMoonApp/issues/21") ?? URL(string: "mailto:TinyMoonApp@gmail.com")!)
+      .onAppear {
+        // Set focus to nil to remove focus from the settings button
+        DispatchQueue.main.async {
+          NSApplication.shared.keyWindow?.makeFirstResponder(nil)
+        }
+      }
   }
 
   private var launchAtLoginToggleButton: some View {
