@@ -1,5 +1,4 @@
 // Created by manny_lopez on 5/15/24.
-// Copyright © 2024 Airbnb Inc. All rights reserved.
 
 import SwiftUI
 
