@@ -11,7 +11,7 @@ class MoonViewModel: ObservableObject {
   @Published var moon: Moon
 
   init(date: Date = Date()) {
-    self.moon = TinyMoon().calculateMoonPhase(date)
+    self.moon = TinyMoon.calculateMoonPhase(date)
     startBackgroundTask()
     Logger.log(event: "MoonViewModel initialized with MoonObject: \(moon), daysTillFullMoon: \(moon.daysTillFullMoon)")
   }
@@ -28,7 +28,7 @@ class MoonViewModel: ObservableObject {
         let randomDay = Int.random(in: 1...28)
         Logger.log(event: "NSBackgroundActivityScheduler: Inside BackgroundActivity completion handler. RandomDay: \(randomDay)")
         let fullMoonDate = Calendar.current.date(from: DateComponents(year: 2024, month: 5, day: randomDay))
-        self.moon = TinyMoon().calculateMoonPhase(fullMoonDate!) // Update this
+        self.moon = TinyMoon.calculateMoonPhase(fullMoonDate!) // Update this
         Logger.log(event: "NSBackgroundActivityScheduler: New MoonObject: \(self.moon)")
       }
 

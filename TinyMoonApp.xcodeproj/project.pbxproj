@@ -678,7 +678,7 @@
 			repositoryURL = "https://github.com/mannylopez/TinyMoon";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

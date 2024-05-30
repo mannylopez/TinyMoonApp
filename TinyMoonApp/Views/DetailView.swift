@@ -97,7 +97,7 @@ struct DetailView: View {
     .padding()
     .onChange(of: selectedDate) { _, newValue in
       selectedDate = newValue
-      moon = TinyMoon().calculateMoonPhase(newValue)
+      moon = TinyMoon.calculateMoonPhase(newValue)
       Logger.log(event: "DatePicker: New date chosen. MoonObject: \(moon)")
       isDatePickerVisible = false
     }
