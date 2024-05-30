@@ -13,6 +13,7 @@ struct DetailView: View {
   }
 
   @Environment(\.openWindow) private var openWindow
+  @Environment(\.colorScheme) var colorScheme
 
   @ObservedObject var viewModel: MoonViewModel
   @State private var moon: Moon
@@ -105,10 +106,13 @@ struct DetailView: View {
 
   private var moonDetails: some View {
     VStack(alignment: .leading, content: {
-      Text("\(moon.emoji) \(moon.name)")
+      Text(moonPhaseText(moon))
         .padding(.top, 4)
 
       Text(daysTillFullMoon(moon.daysTillFullMoon))
+        .padding(.top, 2)
+
+      Text(daysTillNewMoon(moon.daysTillNewMoon))
         .padding(.top, 2)
         .padding(.bottom, 12)
     })
@@ -122,14 +126,36 @@ struct DetailView: View {
     return formattedDate
   }
 
+  private func moonPhaseText(_ moon: Moon) -> String {
+    "\(moon.emoji) \(moon.isFullMoon() ? "Full \(moon.fullMoonName!)" : moon.name)"
+  }
+
   private func daysTillFullMoon(_ daysTillFullMoon: Int) -> String {
     if daysTillFullMoon == 0 {
-      moon.fullMoonName ?? ""
+      ""
     } else if daysTillFullMoon == 1 {
-      "Full moon in 1 day"
+      "\(fullMoonEmoji()) Full moon in 1 day"
     } else {
-      "Full moon in \(moon.daysTillFullMoon) days"
+      "\(fullMoonEmoji()) Full moon in \(daysTillFullMoon) days"
     }
+  }
+
+  private func daysTillNewMoon(_ daysTillNewMoon: Int) -> String {
+    if daysTillNewMoon == 0 {
+      ""
+    } else if daysTillNewMoon == 1 {
+      "\(newMoonEmoji()) New moon in 1 day"
+    } else {
+      "\(newMoonEmoji()) New moon in \(daysTillNewMoon) days"
+    }
+  }
+
+  private func fullMoonEmoji() -> String {
+    colorScheme == .light ? "⚪︎" : "⚫︎"
+  }
+
+  private func newMoonEmoji() -> String {
+    colorScheme == .light ? "⚫︎" : "⚪︎"
   }
 }
 
