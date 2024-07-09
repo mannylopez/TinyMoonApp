@@ -16,7 +16,7 @@ struct DetailView: View {
   @Environment(\.colorScheme) var colorScheme
 
   @ObservedObject var viewModel: MoonViewModel
-  @State private var moon: Moon
+  @State private var moon: TinyMoon.Moon
   @State private var selectedDate: Date
   @State private var isDatePickerVisible = false
 
@@ -126,7 +126,7 @@ struct DetailView: View {
     return formattedDate
   }
 
-  private func moonPhaseText(_ moon: Moon) -> String {
+  private func moonPhaseText(_ moon: TinyMoon.Moon) -> String {
     "\(moon.emoji) \(moon.isFullMoon() ? "Full \(moon.fullMoonName!)" : moon.name)"
   }
 
