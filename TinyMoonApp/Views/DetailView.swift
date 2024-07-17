@@ -4,7 +4,11 @@ import os
 import SwiftUI
 import TinyMoon
 
+// MARK: - DetailView
+
 struct DetailView: View {
+
+  // MARK: Lifecycle
 
   init(viewModel: MoonViewModel) {
     self.viewModel = viewModel
@@ -12,13 +16,11 @@ struct DetailView: View {
     _selectedDate = State(initialValue: viewModel.moon.date)
   }
 
-  @Environment(\.openWindow) private var openWindow
+  // MARK: Internal
+
   @Environment(\.colorScheme) var colorScheme
 
   @ObservedObject var viewModel: MoonViewModel
-  @State private var moon: TinyMoon.Moon
-  @State private var selectedDate: Date
-  @State private var isDatePickerVisible = false
 
   var body: some View {
     VStack {
@@ -37,11 +39,18 @@ struct DetailView: View {
       }
     }
     .onReceive(viewModel.$moon, perform: { updatedMoon in
-      self.moon = updatedMoon
-      self.selectedDate = updatedMoon.date
+      moon = updatedMoon
+      selectedDate = updatedMoon.date
     })
-    .modifier(OnAppearLogEventViewModifier(event: "DetailView visible: MoonObject: \(moon), daysTillFullMoon: \(daysTillFullMoon(moon.daysTillFullMoon))"))
+    .modifier(OnAppearLogEventViewModifier(event: "DetailView visible: MoonObject: \(moon)"))
   }
+
+  // MARK: Private
+
+  @Environment(\.openWindow) private var openWindow
+  @State private var moon: TinyMoon.Moon
+  @State private var selectedDate: Date
+  @State private var isDatePickerVisible = false
 
   private var settingsButton: some View {
     Button {
@@ -51,7 +60,6 @@ struct DetailView: View {
     } label: {
       Image(systemName: "gearshape")
         .font(.title3)
-        .padding(3)
         .contentShape(Rectangle())
     }
     .buttonStyle(PlainButtonStyle())
@@ -89,19 +97,12 @@ struct DetailView: View {
   private var datePicker: some View {
     DatePicker(
       "",
-      selection: $selectedDate,
-      displayedComponents: .date
-    )
-    .datePickerStyle(GraphicalDatePickerStyle())
-    .labelsHidden()
-    .padding()
-    .onChange(of: selectedDate) { _, newValue in
-      selectedDate = newValue
-      moon = TinyMoon.calculateMoonPhase(newValue)
-      Logger.log(event: "DatePicker: New date chosen. MoonObject: \(moon)")
-      isDatePickerVisible = false
-    }
-    .modifier(OnAppearLogEventViewModifier(event: "DatePicker visible"))
+      selection: $selectedDate.onChange(applyDateChange),
+      displayedComponents: .date)
+      .datePickerStyle(GraphicalDatePickerStyle())
+      .labelsHidden()
+      .padding()
+      .modifier(OnAppearLogEventViewModifier(event: "DatePicker visible"))
   }
 
   private var moonDetails: some View {
@@ -122,8 +123,14 @@ struct DetailView: View {
   private var formattedDate: String {
     let formatter = DateFormatter()
     formatter.dateFormat = "MM/dd/yyyy"
-    let formattedDate = formatter.string(from: selectedDate)
-    return formattedDate
+    return formatter.string(from: selectedDate)
+  }
+
+  private func applyDateChange(_ date: Date) {
+    selectedDate = date
+    moon = TinyMoon.calculateMoonPhase(date)
+    Logger.log(event: "DatePicker: New date chosen. MoonObject: \(moon)")
+    isDatePickerVisible = false
   }
 
   private func moonPhaseText(_ moon: TinyMoon.Moon) -> String {
@@ -162,4 +169,15 @@ struct DetailView: View {
 #Preview {
   let date = Date()
   return DetailView(viewModel: MoonViewModel(date: date))
+}
+
+extension Binding {
+  func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
+    Binding(
+      get: { self.wrappedValue },
+      set: { selection in
+        self.wrappedValue = selection
+        handler(selection)
+      })
+  }
 }

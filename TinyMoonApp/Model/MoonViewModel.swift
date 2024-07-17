@@ -20,18 +20,14 @@ class MoonViewModel: ObservableObject {
     Logger.log(event: "BackgroundTask started")
     let activity = NSBackgroundActivityScheduler(identifier: "com.manny.TinyMoonApp.updatecheck")
     activity.invalidate()
-    activity.interval = 60
+    activity.interval = 60 * 10 // Once every 10 minutes
     activity.repeats = true
     activity.qualityOfService = .utility
     activity.schedule() { (completion: NSBackgroundActivityScheduler.CompletionHandler) in
       DispatchQueue.main.async {
-//        let randomDay = Int.random(in: 1...28)
-//        let randomMonth = Int.random(in: 1...12)
-//        Logger.log(event: "NSBackgroundActivityScheduler: Inside BackgroundActivity completion handler. RandomMonth: \(randomMonth), RandomDay: \(randomDay).")
-//        let fullMoonDate = Calendar.current.date(from: DateComponents(year: 2024, month: randomMonth, day: randomDay))
-        let fullMoonDate = Date()
-        Logger.log(event: "NSBackgroundActivityScheduler: Inside BackgroundActivity completion handler. fullMoonDate: \(fullMoonDate)")
-        self.moon = TinyMoon.calculateMoonPhase(fullMoonDate) // Update this
+        let now = Date()
+        Logger.log(event: "NSBackgroundActivityScheduler: Inside BackgroundActivity completion handler. fullMoonDate: \(now)")
+        self.moon = TinyMoon.calculateMoonPhase(now)
         Logger.log(event: "NSBackgroundActivityScheduler: New MoonObject: \(self.moon)")
       }
 

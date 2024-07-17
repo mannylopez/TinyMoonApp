@@ -21,34 +21,37 @@
       "size" : "32x32"
     },
     {
+      "filename" : "TinyMoon-128x128.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
+      "filename" : "TinyMoon-256x256.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
+      "filename" : "TinyMoon-256x256 1.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "TinyMoon_512x512.png",
+      "filename" : "TinyMoon-512x512.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "TinyMoon_512x512 1.png",
+      "filename" : "TinyMoon-512x512 1.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "TinyMoon_1024x1024.png",
+      "filename" : "TinyMoon-1024x1024.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

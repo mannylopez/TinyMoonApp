@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mannylopez/TinyMoon",
       "state" : {
-        "revision" : "50b5dfd6ff0867d50c48f4ee2151615d7b790359",
-        "version" : "2.3.0"
+        "revision" : "870531920ce537f6ab391d782a5ef7bf8a98d00f",
+        "version" : "2.4.0"
       }
     }
   ],
