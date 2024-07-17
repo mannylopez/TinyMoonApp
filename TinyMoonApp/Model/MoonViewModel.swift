@@ -17,7 +17,7 @@ class MoonViewModel: ObservableObject {
 
   // MARK: Public
 
-  public static let appVersion = "v. 1.0.1"
+  public static let appVersion = "v. 1.1"
 
   // MARK: Internal
 
