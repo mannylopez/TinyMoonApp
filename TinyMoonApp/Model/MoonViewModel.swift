@@ -6,15 +6,24 @@ import SwiftUI
 import TinyMoon
 
 class MoonViewModel: ObservableObject {
-  public static let appVersion = "v. 1.0"
 
-  @Published var moon: TinyMoon.Moon
+  // MARK: Lifecycle
 
   init(date: Date = Date()) {
-    self.moon = TinyMoon.calculateMoonPhase(date)
+    moon = TinyMoon.calculateMoonPhase(date)
     startBackgroundTask()
     Logger.log(event: "MoonViewModel initialized with MoonObject: \(moon)")
   }
+
+  // MARK: Public
+
+  public static let appVersion = "v. 1.0"
+
+  // MARK: Internal
+
+  @Published var moon: TinyMoon.Moon
+
+  // MARK: Private
 
   private func startBackgroundTask() {
     Logger.log(event: "BackgroundTask started")
@@ -23,7 +32,7 @@ class MoonViewModel: ObservableObject {
     activity.interval = 60 * 10 // Once every 10 minutes
     activity.repeats = true
     activity.qualityOfService = .utility
-    activity.schedule() { (completion: NSBackgroundActivityScheduler.CompletionHandler) in
+    activity.schedule { (completion: NSBackgroundActivityScheduler.CompletionHandler) in
       DispatchQueue.main.async {
         let now = Date()
         Logger.log(event: "NSBackgroundActivityScheduler: Inside BackgroundActivity completion handler. fullMoonDate: \(now)")

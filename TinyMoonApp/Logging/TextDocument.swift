@@ -5,11 +5,8 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct TextDocument: FileDocument {
-  static var readableContentTypes: [UTType] {
-    [.plainText]
-  }
 
-  var text = ""
+  // MARK: Lifecycle
 
   init(text: String) {
     self.text = text
@@ -23,7 +20,15 @@ struct TextDocument: FileDocument {
     }
   }
 
-  func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
+  // MARK: Internal
+
+  static var readableContentTypes: [UTType] {
+    [.plainText]
+  }
+
+  var text = ""
+
+  func fileWrapper(configuration _: WriteConfiguration) throws -> FileWrapper {
     FileWrapper(regularFileWithContents: Data(text.utf8))
   }
 

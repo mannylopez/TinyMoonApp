@@ -1,15 +1,12 @@
 // Created by manny_lopez on 5/4/24.
 
+import LaunchAtLogin
 import os
 import SwiftUI
-import LaunchAtLogin
 
 struct SettingsView: View {
-  @State private var showDebugLogs = false
-  @State private var exportLogs = false
-  private var document: TextDocument {
-    TextDocument(text: Logger.logEntries.debugDescription)
-  }
+
+  // MARK: Internal
 
   var body: some View {
     VStack {
@@ -24,8 +21,7 @@ struct SettingsView: View {
         launchAtLoginToggleButton
         showDebugLogsButton
         quitAppButton
-      }
-      else {
+      } else {
         debugLogsView
       }
       Spacer()
@@ -35,6 +31,15 @@ struct SettingsView: View {
     .background(Color("BackgroundColor"))
     .cornerRadius(10)
     .shadow(radius: 5)
+  }
+
+  // MARK: Private
+
+  @State private var showDebugLogs = false
+  @State private var exportLogs = false
+
+  private var document: TextDocument {
+    TextDocument(text: Logger.logEntries.debugDescription)
   }
 
   private var title: some View {
@@ -55,7 +60,10 @@ struct SettingsView: View {
 
   @ViewBuilder
   private var about: some View {
-    Link("Contact", destination: URL(string: "https://github.com/mannylopez/TinyMoonApp/issues/21") ?? URL(string: "mailto:TinyMoonApp@gmail.com")!)
+    Link(
+      "Contact",
+      destination: URL(string: "https://github.com/mannylopez/TinyMoonApp/issues/21") ??
+        URL(string: "mailto:TinyMoonApp@gmail.com")!)
       .onAppear {
         // Set focus to nil to remove focus from the settings button
         DispatchQueue.main.async {
@@ -89,8 +97,8 @@ struct SettingsView: View {
       isPresented: $exportLogs,
       document: document,
       contentType: .plainText,
-      defaultFilename: "tinyMoonDebugLogs.txt"
-    ) { result in
+      defaultFilename: "tinyMoonDebugLogs.txt")
+    { result in
       switch result {
       case .success(let file):
         print(file)

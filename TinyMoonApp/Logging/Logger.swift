@@ -4,26 +4,13 @@ import Foundation
 import OSLog
 
 extension Logger {
-  private static var subsystem: String {
-    Bundle.main.bundleIdentifier ?? "manny.TinyMoonApp"
-  }
 
-  private static let statistics = Logger(subsystem: subsystem, category: "statistics")
-
-  private static let sessionID = UUID()
+  // MARK: Internal
 
   private(set) static var logEntries: [EntryMetadata] = []
 
   static func log(event: String) {
     Logger.statistics.info("\(event , privacy: .public)")
-  }
-
-  private static func formatLog(_ log: OSLogEntryLog) -> EntryMetadata {
-    EntryMetadata(
-      timestamp: log.date.description(with: .current),
-      category: log.category,
-      message: log.composedMessage,
-      sessionID: sessionID)
   }
 
   static func export() {
@@ -39,4 +26,23 @@ extension Logger {
       Logger.statistics.debug("Error: \(error.localizedDescription)")
     }
   }
+
+  // MARK: Private
+
+  private static let statistics = Logger(subsystem: subsystem, category: "statistics")
+
+  private static let sessionID = UUID()
+
+  private static var subsystem: String {
+    Bundle.main.bundleIdentifier ?? "manny.TinyMoonApp"
+  }
+
+  private static func formatLog(_ log: OSLogEntryLog) -> EntryMetadata {
+    EntryMetadata(
+      timestamp: log.date.description(with: .current),
+      category: log.category,
+      message: log.composedMessage,
+      sessionID: sessionID)
+  }
+
 }

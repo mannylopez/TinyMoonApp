@@ -8,12 +8,10 @@ struct RoundedRectangleBorder: ViewModifier {
     content
       .background(
         RoundedRectangle(cornerRadius: cornerRadius)
-          .fill(Color.gray.opacity(0.1))
-      )
+          .fill(Color.gray.opacity(0.1)))
       .overlay(
         RoundedRectangle(cornerRadius: cornerRadius)
-          .stroke(Color.gray, lineWidth: 2)
-      )
+          .stroke(Color.gray, lineWidth: 2))
       .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
   }
 }
