@@ -17,7 +17,7 @@ class MoonViewModel: ObservableObject {
 
   // MARK: Public
 
-  public static let appVersion = "v. 1.0"
+  public static let appVersion = "v. 1.0.1"
 
   // MARK: Internal
 
@@ -29,7 +29,7 @@ class MoonViewModel: ObservableObject {
     Logger.log(event: "BackgroundTask started")
     let activity = NSBackgroundActivityScheduler(identifier: "com.manny.TinyMoonApp.updatecheck")
     activity.invalidate()
-    activity.interval = 60 * 10 // Once every 10 minutes
+    activity.interval = 60 * 5 // Every 5 minutes
     activity.repeats = true
     activity.qualityOfService = .utility
     activity.schedule { (completion: NSBackgroundActivityScheduler.CompletionHandler) in
